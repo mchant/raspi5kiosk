@@ -27,8 +27,8 @@ How a kiosk worked for me
    xset -dpms
    xrandr --output HDMI-1 --rotate left
    #setxbmap -option terminate ctrl_alt_bksp
-   #/home/eos-usr/kioskwordclock/wordclock
-   cd /home/eos-usr/kioskwordclock && ./wordclock --host 0.0.0.0 --port 8080 &
+   #/home/pg/kioskwordclock/wordclock
+   cd /home/pg/kioskwordclock && ./wordclock --host 0.0.0.0 --port 8080 &
    sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State'
    sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~./config/chromium/Default/Preferences
    chromium-browser --disable-infobars --force-dark-mode --kiosk 'http://localhost:8080' 
